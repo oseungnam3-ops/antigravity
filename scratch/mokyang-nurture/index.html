@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="파주목양교회 성도들을 위한 온라인 교육 및 말씀 양육 플랫폼, 목양양육앱">
+  <meta name="theme-color" content="#0C2340">
+  <title>파주목양교회 - 목양양육앱</title>
+  <!-- Google Fonts: Noto Sans KR (Korean), Playfair Display (Serif accent for church logo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Mobile App Frame Container -->
+  <div id="app-container">
+    
+    <!-- Top App Header -->
+    <header class="app-header" id="app-header-main">
+      <div class="logo-section">
+        <div class="logo-icon">⚜️</div>
+        <div class="logo-text-group">
+          <span class="logo-subtext">파주목양교회</span>
+          <span class="logo-text">목양양육앱</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <!-- Accessibility: Large Font Toggle for Elderly -->
+        <button class="text-scale-btn" id="btn-text-scale" aria-label="글씨 크기 조정">
+          <span>가<sup>+</sup></span> 큰글씨
+        </button>
+        <!-- Prototype Helpers: Current Role Badge -->
+        <div class="role-badge" id="header-role-badge">성도</div>
+      </div>
+    </header>
+
+    <!-- Prototype Role Quick Switcher Panel (Collapsible Developer Panel) -->
+    <div id="dev-role-switcher">
+      <div class="switcher-header" id="btn-toggle-switcher">
+        <span>⚙️ 개발용 권한 변경기 (테스트용)</span>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="switcher-body" id="switcher-options">
+        <button class="role-btn" data-role="pending">1. 가입대기자</button>
+        <button class="role-btn active" data-role="member">2. 일반성도</button>
+        <button class="role-btn" data-role="leader">3. 리더/교사</button>
+        <button class="role-btn" data-role="admin">4. 관리자</button>
+      </div>
+    </div>
+
+    <!-- Scrollable Main View Area -->
+    <main class="app-content" id="dynamic-content" aria-label="메인 콘텐츠 영역">
+      <!-- Pages rendered dynamically here by app.js -->
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="app-nav" id="app-navigation-bottom" aria-label="하단 메뉴">
+      <button class="nav-item active" data-page="home" id="nav-home" aria-label="홈 화면으로 이동">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        <span>홈</span>
+      </button>
+      <button class="nav-item" data-page="devotion" id="nav-devotion" aria-label="말씀묵상 화면으로 이동">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l4-2.18L12 3zm6.8 8.18l-6.8 3.71-6.8-3.71V16l6.8 3.71 6.8-3.71v-4.82z"/>
+        </svg>
+        <span>말씀묵상</span>
+      </button>
+      <button class="nav-item" data-page="biblestudy" id="nav-biblestudy" aria-label="성경공부 화면으로 이동">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <span>성경공부</span>
+      </button>
+      <button class="nav-item" data-page="sermon" id="nav-sermon" aria-label="설교영상 화면으로 이동">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
+        </svg>
+        <span>설교영상</span>
+      </button>
+      <button class="nav-item" data-page="profile" id="nav-profile" aria-label="내 정보 화면으로 이동">
+        <svg viewBox="0 0 24 24" class="nav-icon">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        <span>내 정보</span>
+      </button>
+    </nav>
+    
+  </div>
+
+  <!-- Interactive Dialog / Modal Overlay (Global) -->
+  <div class="modal-overlay" id="general-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">제목</h3>
+        <button class="modal-close-btn" id="btn-close-modal" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Content will be injected dynamically -->
+      </div>
+      <div class="modal-footer" id="modal-footer">
+        <button class="btn btn-outline" id="modal-cancel-btn">취소</button>
+        <button class="btn btn-accent" id="modal-confirm-btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Toaster -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Core Logic JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
